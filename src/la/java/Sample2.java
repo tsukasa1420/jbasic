@@ -1,111 +1,47 @@
 package la.java;
 
-public class Sample2 {
-
+class Sample2 {
 	// 学生の点数
-	static double[] point = {86, 109, 120, 66, 148, 101, 150, 78};/*new double[std_num];
-	point[0] = 60;
-	point[1] = 70;
-	point[2] = 80;
-	point[3] = 95;
-	point[4] = 95;*/
-
+	static double[] point = {28, 73, 89, 93, 54, 25, 68, 92, 88,54};
 	// 学生の人数
-	static int std_num = point.length;
+	static int stdt_num = point.length;
 
 	public static void main( String[] args ) {
-		/*
-		int x = add( 3, 4 );
-		int y = sub( 9, 3 );
+		Test test = new Test();
 
-		System.out.println( "x = " + x );
-		System.out.println( "y = " + y );
+		double[] devi_val	= new double[stdt_num];	// 学生たちの偏差値の格納先
+		test.before_devi_val(point);					// 標準偏差を計算
 
-		int a =10;
-		System.out.println( a );
-		*/
-
-
-		System.out.println(std_num);
-		System.out.println();
-
-		// 学生たちの偏差の格納先
-		double[] ret_dev = new double[std_num];
-
-		// 学生たちの偏差値の格納先
-		double[] ret_dev_val = new double[std_num];
-
-		// 学生たちの偏差を ret_dev に格納している
-		for( int i = 0; i < std_num; i++ ) {
-
-			System.out.println("◆"+point[i]);
-
-			ret_dev[i] = My_dev( point[i], point );
-			System.out.println( "偏差 " + point[i] + "：\t" + ret_dev[i] );
+		// 学生たちの偏差値を devi_val に格納している
+		for( int i = 0; i < stdt_num; i++ ) {
+			devi_val[i] = test.devi_val(i);
+			System.out.println( "偏差値 " + point[i] + "：\t" + devi_val[i] );
 			System.out.println();
 		}
+	}
+}
+class Test{
+	static Sample2 sam2 = new Sample2();
+	static int stdt_num = sam2.stdt_num;
+	static double[] point = sam2.point;
 
-		System.out.println();
+	// ===== ◆計算式変数・配列◆ =====
+	double sum = 0;						// 合計点の格納先
+	double ret_ave = 0;					// 平均点の格納先
+	double[] devi = new double[stdt_num];	// 偏差の格納先（個々）
+	double devi_2_sum = 0;				// 偏差平方和の格納先
+	double std_devi = 0;					// 標準偏差の格納先
 
-		// 学生たちの偏差値を ret_dev_val に格納している
-		for( int i = 0; i < std_num; i++ ) {
-			ret_dev_val[i] = My_dev_val( point[i], point, ret_dev , i);
-			System.out.println( "偏差値 " + point[i] + "：\t" + ret_dev_val[i] );
-		}
+	// ===== ◆計算式関数◆ =====　個々人の偏差を受け取って標準偏差を返す
+	void before_devi_val( double[] point ) {
+		for( int i = 0; i < stdt_num; i++ ) { sum += point[i]; }					// 合計点
+		ret_ave = sum / stdt_num;											// 平均点
+		for( int i = 0; i < stdt_num; i++ ) { devi[i] = point[i] - ret_ave; }			// 偏差（個々）
+		for( int i = 0; i < stdt_num; i++ ) { devi_2_sum += ( devi[i] * devi[i] ); }	// 偏差平方和
+		std_devi = Math.sqrt( devi_2_sum  / stdt_num );						// 標準偏差
 	}
 
-	public static int add( int a, int b ) {
-		return a + b;
+	double devi_val( int i ) {
+		return 10 * ( point[i] - ret_ave ) / std_devi + 50;
 	}
-
-	public static int sub( int a, int b ) {
-		return a - b;
-	}
-
-	// 平均値を返す
-	static double My_ave(double[] point) {
-		// 平均値の格納先
-		double My_ave_ave = 0;
-
-		for( int i = 0; i < std_num; i++ ) {
-			My_ave_ave += point[i];
-		}
-
-		System.out.println(My_ave_ave / std_num);
-
-		return My_ave_ave / std_num;
-	}
-
-	// 個々人の偏差を返す
-	static double My_dev( double ind, double[] point ) {
-		// 平均値関数を呼び出して格納
-		double ret_ave = My_ave( point );
-
-		return ( ind - ret_ave );		// 差を返す
-	}
-
-	// 偏差平方和の平方根が標準偏差
-	static double My_dev_2_sum(double[] ret_dev) {
-		double stnd_dev = 0;
-
-		for( int i = 0; i < std_num; i++ ) {
-			stnd_dev += ( ret_dev[i] * ret_dev[i] );
-		}
-
-		return Math.sqrt(stnd_dev);
-	}
-
-	// 偏差と点数と平均を受け取る　10（点数-平均）/標準偏差+50　
-	static double My_dev_val( double ind, double[] point, double[] ret_dev, int i ) {
-		double ret_ave = My_ave( point );	// 平均値
-		double Md_2_sum = My_dev_2_sum( ret_dev );	// 標準偏差
-
-		return 10 * ( point[i] - ret_ave ) / Md_2_sum + 50;
-	}
-
-
-
-
-
-
 }
