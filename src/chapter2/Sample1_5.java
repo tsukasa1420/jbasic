@@ -20,6 +20,9 @@ public class Sample1_5 {
 		// 上の二行と同じ動作をする拡張 for文
 		//for( Season seasonAll: Season.values() ){System.out.println( seasonAll );}
 
+		// データ型 変数名1						// 配列でもStringでもOK
+		// for( データ型 変数名2 : 変数名1 ){ 処理 }
+
 		System.out.println( "\n=====switch文での使用=====" );
 		System.out.println( "冬は" + seasonTerm( Season.Winter ) );
 	}
