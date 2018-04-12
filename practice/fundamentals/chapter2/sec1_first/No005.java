@@ -9,3 +9,12 @@ public class No005 {
 		System.out.println("Hello Java");
 	}
 }
+
+/*
+public class No005 {
+
+	public void static main(String[] args) {
+		System.out.println("Hello Java");
+	}
+}
+*/

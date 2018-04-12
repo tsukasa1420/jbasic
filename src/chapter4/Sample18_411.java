@@ -36,6 +36,14 @@ public class Sample18_411 {
 		}
 }
 
+class SampleAcc18_0412{
+	int nomalSam = 10;				// 同一クラス、同一パッケージのみで有効
+	private int privateSam = 10;		// 同一クラスのみで有効
+	protected int protectSam = 10;	// 同一クラス、同一パッケージ、サブクラスのみで有効
+	public int publicSam = 10;		// どこからでも利用可能
+}
+
+
 class StaticCodeSample{
 	static int counter = 0;
 

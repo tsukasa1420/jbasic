@@ -8,7 +8,7 @@ public class No003 {
 		int[] no003 = new int[100];
 		for( int cnt_no3 = 0; cnt_no3 < no003.length; cnt_no3++ ) {
 			no003[ cnt_no3 ] = cnt_no3 + 1;
-			//System.out.println( no003[ cnt_no3 ] );
+			System.out.println( no003[ cnt_no3 ] );
 		}
 
 		for( int cnt_no3 = 0; cnt_no3 < no003.length; cnt_no3++ ) {

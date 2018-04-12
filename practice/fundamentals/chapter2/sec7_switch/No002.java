@@ -5,52 +5,56 @@ package fundamentals.chapter2.sec7_switch;
  */
 public class No002 {
 	public static void main(String[] args) {
-		int x = 81;
-		digit( x );
+		int x = 0;
+		weekDay( x );
 
-		x = 80;
-		digit( x );
+		x = 1;
+		weekDay( x );
 
-		x = 79;
-		digit( x );
+		x = 2;
+		weekDay( x );
 
-		x = 61;
-		digit( x );
+		x = 3;
+		weekDay( x );
 
-		x = 60;
-		digit( x );
+		x = 4;
+		weekDay( x );
 
-		x = 59;
-		digit( x );
+		x = 5;
+		weekDay( x );
 
-		x = 41;
-		digit( x );
+		x = 6;
+		weekDay( x );
 
-		x = 40;
-		digit( x );
-
-		x = 39;
-		digit( x );
+		x = 7;
+		weekDay( x );
 	}
 
-	static void digit( int x ) {
+	static void weekDay( int x ) {
 		switch(x) {
-		case
+			case 0:
+				System.out.println( "月曜日" );
+				break;
+			case 1:
+				System.out.println( "火曜日" );
+				break;
+			case 2:
+				System.out.println( "水曜日" );
+				break;
+			case 3:
+				System.out.println( "木曜日" );
+				break;
+			case 4:
+				System.out.println( "金曜日" );
+				break;
+			case 5:
+				System.out.println( "土曜日" );
+				break;
+			case 6:
+				System.out.println( "日曜日" );
+				break;
+			default:
+				System.out.println( "Error" );
 		}
-
-
-
-
-
-
-
-
-
-
-		if( x >= 80 )					System.out.println( x + " is very good" );
-		else if( x < 80 && x >= 60 )		System.out.println( x + " is good" );
-		else if( x < 60 && x > 40 )		System.out.println( x + " is nomal" );
-		else if( x <= 40 )				System.out.println( x + " is bad" );
-		else							System.out.println( "Error" );
 	}
 }
