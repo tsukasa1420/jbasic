@@ -7,9 +7,10 @@ package fundamentals.chapter4.sec1_method;
  */
 public class No005 {
 	public static void main(String[] args) {
-		System.out.println( leap( 400 ) );
+		System.out.println( leap( 100 ) );
 	}
 
+	/* うるう年かどうかを判別する。*/
 	static boolean leap( int leap ) {
 		if( leap % 400 == 0 || ( leap % 100 != 0 && leap % 4 ==0 ) ) {
 			return true;

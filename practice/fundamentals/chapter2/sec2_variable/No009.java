@@ -6,7 +6,20 @@ package fundamentals.chapter2.sec2_variable;
  */
 public class No009 {
 	public static void main(String[] args) {
-		double f = 1.20;
+		float f = 1.2f;					// double f = 1.2;
+		double d = 5.275;
+		f = (float)d;
+
+		System.out.println("f=" + f);
+		System.out.println("d=" + d);
+	}
+}
+
+/*
+
+public class No009 {
+	public static void main(String[] args) {
+		float f = 1.2;
 		double d = 5.275;
 		f = d;
 
@@ -14,3 +27,5 @@ public class No009 {
 		System.out.println("d=" + d);
 	}
 }
+
+*/

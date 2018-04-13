@@ -5,5 +5,16 @@ package fundamentals.chapter4.sec2_class;
  * また、No002クラスのmainメソッド内で車クラスをインスタンス化し、定義したメソッドを使用してみてください。
  */
 public class No002 {
+	public static void main(String[] args) {
+		Car car = new Car();
+		System.out.println( "車種\t\t" + car.carType );
+		System.out.println( "タイヤの数\t" + car.tire( 4 ) );
+	}
+}
 
+class Car{
+	String carType = "HiAce";
+	String tire( int tire ) {
+		return tire + "本タイヤ";
+	}
 }

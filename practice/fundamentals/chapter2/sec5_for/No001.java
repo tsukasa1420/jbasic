@@ -5,7 +5,6 @@ package fundamentals.chapter2.sec5_for;
 public class No001 {
 	public static void main(String[] args) {
 		int[] no001 = { 1, 2, 3, 4, 5, 6, 7, 9, 10  };
-		for( int i : no001 ) {System.out.println( i );
-		}
+		for( int i : no001 ) System.out.println( i );
 	}
 }

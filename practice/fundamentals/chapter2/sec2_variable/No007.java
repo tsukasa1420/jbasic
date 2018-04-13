@@ -10,3 +10,15 @@ public class No007 {
 		System.out.println(a + b-9);
 	}
 }
+
+/*
+
+public class No007 {
+	public static void main(String[] args) {
+		int a = 1;
+		String b = 4;
+		System.out.println(a + b);
+	}
+}
+
+*/

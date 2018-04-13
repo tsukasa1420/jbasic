@@ -11,8 +11,6 @@ public class No006 {
 }
 /*
 
-
-
 Exception in thread "main" java.lang.Error: Unresolved compilation problem:
 構文エラーがあります。";" を挿入して BlockStatements を完了してください
 
