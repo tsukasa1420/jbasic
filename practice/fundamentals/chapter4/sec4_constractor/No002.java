@@ -4,5 +4,12 @@ package fundamentals.chapter4.sec4_constractor;
  * mainメソッド内でインスタンス化してください。
  */
 public class No002 {
-
+	public static void main(String[] args) {
+		Hello hello = new Hello();
+	}
+}
+class Hello{
+	Hello(){
+		System.out.println( "Hello" );
+	}
 }

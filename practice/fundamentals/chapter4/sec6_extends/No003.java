@@ -6,6 +6,16 @@ package fundamentals.chapter4.sec6_extends;
  */
 public class No003 {
 	public static void main(String[] args) {
-		
+		Dog dog = new Dog();
+		dog.setName("pothi");
+		System.out.println(dog.getName());
+		dog.sitDown("お座り");
+	}
+}
+
+class Dog extends Animal{
+	void sitDown(String order) {
+		if(order == "お座り") System.out.println( "すとん" );
+		else System.out.println( "Bow" );
 	}
 }
