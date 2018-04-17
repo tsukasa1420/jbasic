@@ -10,7 +10,23 @@ public class No003 {
 }
 
 class Test {
+	 Test(){
+		 this.method();
+	}
 	void method() {
 		System.out.println("Test!!!");
 	}
 }
+/*
+public class No003 {
+	public static void main(String[] args) {
+		Test t = new Test();
+	}
+}
+
+class Test {
+	void method() {
+		System.out.println("Test!!!");
+	}
+}
+*/

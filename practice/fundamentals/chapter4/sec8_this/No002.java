@@ -11,9 +11,25 @@ public class No002 {
 
 class Book {
 	Book() {
+		this( "alter" );
+	}
+	Book(String title) {
+		System.out.println(title);
+	}
+}
+/*
+public class No002 {
+	public static void main(String[] args) {
+		Book b = new Book();
+	}
+}
+
+class Book {
+	Book() {
 
 	}
 	Book(String title) {
 		System.out.println(title);
 	}
 }
+*/

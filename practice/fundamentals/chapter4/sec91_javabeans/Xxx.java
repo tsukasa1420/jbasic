@@ -4,5 +4,9 @@ package fundamentals.chapter4.sec91_javabeans;
  * 取得したデータを画面に表示するプログラムを作成してください。
  */
 public class Xxx {
-
+	public static void main(String[] args) {
+		UserInfo ui = new UserInfo();
+		ui.setuserName("Mike Jeff");
+		System.out.println( ui.getuserName() );
+	}
 }

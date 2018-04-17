@@ -9,13 +9,32 @@ public class No001 {
 		n1.setName("安田");
 		System.out.println(n1.getName());
 	}
-	
+
 	public void setName(String name) {
-		
+		this.name = name;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
 
 }
+/*
+public class No001 {
+	private String name;
+	public static void main(String[] args) {
+		No001 n1 = new No001();
+		n1.setName("安田");
+		System.out.println(n1.getName());
+	}
+
+	public void setName(String name) {
+
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+}
+*/

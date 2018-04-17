@@ -4,5 +4,17 @@ package fundamentals.chapter4.sec9_abstract;
  * 作成した抽象クラスを使用して、鳴き声を出力するプログラムを作成してください。
  */
 public class No001 {
-
+	public static void main(String[] args) {
+		Inu inu = new Inu();
+		inu.cry();
+	}
+}
+abstract class Animal{
+	abstract void cry();
+}
+class Inu extends Animal{
+	@Override
+	void cry() {
+		System.out.println("Bow");
+	}
 }
