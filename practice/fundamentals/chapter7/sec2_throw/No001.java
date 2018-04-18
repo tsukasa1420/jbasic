@@ -5,7 +5,10 @@ package fundamentals.chapter7.sec2_throw;
  */
 public class No001 {
 	public static void main(String[] args) {
-		int a = 0;
-
+		int a = 10;
+		if( a == 0 ) {
+			throw new ArithmeticException( "エラー" );
+		}
+		System.out.println( "正常実行" );
 	}
 }

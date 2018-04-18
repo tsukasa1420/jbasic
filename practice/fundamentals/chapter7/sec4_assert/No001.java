@@ -5,5 +5,8 @@ package fundamentals.chapter7.sec4_assert;
  * また、エラー時のメッセージには「値が不正です。」と表示されること
  */
 public class No001 {
-	
+	public static void main(String[] args) {
+		int x = 9;
+		assert x != 10 : "値が不正です。";
+	}
 }
