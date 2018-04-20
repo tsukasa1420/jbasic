@@ -8,84 +8,134 @@ import java.util.Scanner;
  */
 public class No018 {
 	public static void main(String[] args) {
-		Janken jan = new Janken();
+		new Janken();
+		/*
+		new Janken(0, -1);	// エラーテスト
+		new Janken(0, 0);
+		new Janken(0, 1);
+		new Janken(0, 2);
+		new Janken(0, 3);	// エラーテスト
+		System.out.println();
+		System.out.println();
+
+		new Janken(1, -1);	// エラーテスト
+		new Janken(1, 0);
+		new Janken(1, 1);
+		new Janken(1, 2);
+		new Janken(1, 3);	// エラーテスト
+		System.out.println();
+		System.out.println();
+
+		new Janken(2, -1);	// エラーテスト
+		new Janken(2, 0);
+		new Janken(2, 1);
+		new Janken(2, 2);
+		new Janken(2, 3);	// エラーテスト
+		*/
 	}
 }
-
 class Janken{
-	Janken(){
-		int play = player();
-		int nonPlay = nonPlayer();
+//	0 : ぐー
+//	1 : ちょき
+//	2 : ぱー
+//	0 : ぐー
 
-		if(play == nonPlay) {
+	Janken(){
+		System.out.println( "0 : ぐー\t1 : ちょき\t2 : ぱー" );
+		System.out.println();
+
+		int play = player();
+		System.out.println();
+		if( play < 0 || 2 < play ) {						// +2
+			System.out.println( "不正な入力値です" );
+			System.out.println();
+			return;
+		}
+
+		int nonPlay = nonPlayer();
+		if( nonPlay < 0 || 2 < nonPlay ) {					// +2
+			System.out.println( "不正な入力値です" );
+			System.out.println();
+			return;
+		}
+
+		if(play == nonPlay) {							// +6
 			System.out.println( "あいこ" );
 		}
-		if(play == nonPlay) {
-
+		else if( play == (nonPlay - 1) ) {
+			System.out.println( "勝ち" );
 		}
-
-
-
-
-
-
-
-
-
-
-		if( play == 0 ) {					// ぐー
-			System.out.println( "自分：ぐー" );
-			if( nonPlay == 0 ) {					// ぐー
-				System.out.println( "相手：ぐー" );
-				System.out.println( "あいこ" );
-			}
-			else if( nonPlay == 1 ) {				// ちょき
-				System.out.println( "勝ち" );
-			}
-			else if( nonPlay == 2 ) {				// ぱー
-				System.out.println( "相手：ぱー" );
-				System.out.println( "負け" );
-			}
-			else System.out.println( "ERROR" );
+		else if( play == (nonPlay + 1) ) {
+			System.out.println( "負け" );
 		}
-		else if( play == 1 ) {				// ちょき
-			System.out.println( "自分：ちょき" );
-			if( nonPlay == 0 ) {					// ぐー
-				System.out.println( "相手：ぐー" );
-				System.out.println( "負け" );
-			}
-			else if( nonPlay == 1 ) {				// ちょき
-				System.out.println( "あいこ" );
-			}
-			else if( nonPlay == 2 ) {				// ぱー
-				System.out.println( "相手：ぱー" );
-				System.out.println( "勝ち" );
-			}
-			else System.out.println( "ERROR" );
+		else if( play == (nonPlay + 2) ) {
+			System.out.println( "勝ち" );
 		}
-		else if( play == 2 ) {				// ぱー
-			System.out.println( "自分：ぱー" );
-			if( nonPlay == 0 ) {					// ぐー
-				System.out.println( "相手：ぐー" );
-				System.out.println( "勝ち" );
-			}
-			else if( nonPlay == 1 ) {				// ちょき
-				System.out.println( "負け" );
-			}
-			else if( nonPlay == 2 ) {				// ぱー
-				System.out.println( "相手：ぱー" );
-				System.out.println( "あいこ" );
-			}
-			else System.out.println( "ERROR" );
+		else if( play == (nonPlay - 2) ) {
+			System.out.println( "負け" );
 		}
-		else System.out.println( "不正な入力値です" );
+		else System.out.println( "えらー" );
 	}
 	int player() {
-		System.out.println( "0 : ぐー\t1 : ちょき\t2 : ぱー" );
 		Scanner scan = new Scanner(System.in);
-		return 0;//scan.nextInt();
+		System.out.print( "何を出しますか：" );
+		int play = scan.nextInt();
+		System.out.println();
+		scan.close();
+		System.out.println( "自分：" + janJudge( play ) );
+		return play;
 	}
 	int nonPlayer() {
-		return (int)(Math.random()*3);
+		int nonPlay = (int)(Math.random()*3);
+		System.out.println( "相手：" + janJudge( nonPlay ) );
+		return nonPlay;
+	}
+	String janJudge( int hand ) {
+		if( hand == 0 ) return "ぐー";					// +4
+		else if( hand == 1 ) return "ちょき";
+		else if( hand == 2 ) return "ぱー";
+		else return "ERROR";
+	}
+
+	// テスト用コンストラクタ・メソッド
+	Janken( int a, int b ){
+		int play = player(a);
+		System.out.println();
+		if( play < 0 || 2 < play ) {						// +2
+			System.out.println( "不正な入力値です" );
+			return;
+		}
+
+		int nonPlay = nonPlayer(b);
+		if( nonPlay < 0 || 2 < nonPlay ) {					// +2
+			System.out.println( "不正な入力値です" );
+			return;
+		}
+
+		if(play == nonPlay) {							// +6
+			System.out.println( "あいこ" );
+		}
+		else if( play == (nonPlay - 1) ) {
+			System.out.println( "勝ち" );
+		}
+		else if( play == (nonPlay + 1) ) {
+			System.out.println( "負け" );
+		}
+		else if( play == (nonPlay + 2) ) {
+			System.out.println( "勝ち" );
+		}
+		else if( play == (nonPlay - 2) ) {
+			System.out.println( "負け" );
+		}
+		else System.out.println( "えらー" );
+	}
+	int player(int a) {
+		Scanner scan = new Scanner(System.in);
+		int play = a;
+		return play;
+	}
+	int nonPlayer(int b) {
+		int nonPlay = b;
+		return nonPlay;
 	}
 }
