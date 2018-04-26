@@ -5,5 +5,7 @@ package fundamentals.chapter00;
  * ※APIは自身で探してみてください
  */
 public class No001 {
-
+	public static void main(String[] args) {
+		
+	}
 }

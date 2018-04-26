@@ -1,4 +1,4 @@
-package fundamentals.chapter08.sec1_stream;
+package fundamentals.chapter08;
 
 import java.io.BufferedReader;
 import java.io.IOException;
