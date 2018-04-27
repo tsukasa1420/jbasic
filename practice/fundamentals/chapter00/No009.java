@@ -9,8 +9,8 @@ import java.util.function.Function;
  */
 public class No009 {
 	public static void main(String[] args) {
-		Function<Integer, String > func = String ->{
-			return null;
-		};
+		// Function<「引数と同じ値の参照型」,「戻り値と同じ値の参照型」> 「クラス変数名」 = 「引数名」 -> 処理
+		Function<Integer, String > func = paraInt -> "Hello" + paraInt;
+		System.out.println( func.apply(10000) );
 	}
 }
