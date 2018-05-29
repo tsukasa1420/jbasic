@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * ただし、今回はArrayListのaddメソッド内でコンストラクタを呼び出すようにしてください。
  * その後、3冊のタイトルと価格を出力するプログラムを作成してください。
  */
-public class No008 {
+public class No005 {
 	public static void main(String[] args) {
 		ArrayList< Book > str = new ArrayList<>();
 		str.add( new Book( "こゝろ", 1000 ) );

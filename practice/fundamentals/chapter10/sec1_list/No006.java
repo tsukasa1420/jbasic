@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * 次の社員クラスをインスタンス化した際にコンストラクタで名前と年齢を設定して3人の社員を作成してください。
  * また、作成した社員をArrayListに格納し、for文を使用して名前と年齢を出力するプログラムを作成してください。
  */
-public class No009 {
+public class No006 {
 	public static void main(String[] args) {
 		ArrayList< Employee > str = new ArrayList<>();
 		str.add( new Employee( "織田信長", 35 ) );
